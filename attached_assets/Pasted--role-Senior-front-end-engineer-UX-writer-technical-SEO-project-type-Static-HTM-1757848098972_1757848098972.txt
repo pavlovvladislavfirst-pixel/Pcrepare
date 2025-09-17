@@ -1,0 +1,55 @@
+{
+  "role": "Senior front-end engineer + UX writer + technical SEO",
+  "project_type": "Static HTML/CSS/JS (no build tools)",
+  "goal": "Review, propose improvements, and IMPLEMENT them for the landing 'Computer Help & Remote Setup' in this repo. Keep the existing hero image at assets/hero.jpg visually unchanged. Ship via Replit Static Deployment.",
+  "repo_layout": {
+    "root_files": ["index.html", "styles.css", "main.js", ".replit", "replit.nix", "README.md"],
+    "assets": ["assets/hero.jpg"],
+    "i18n": ["i18n/ru.json", "i18n/ro.json", "i18n/en.json"]
+  },
+  "must_keep": [
+    "Do NOT replace the hero visual; file path may change, but the picture must look the same.",
+    "Sections: Hero, Services, Remote support, Pricing, How we work, FAQ, Contact.",
+    "Form endpoint https://submit-form.com/CmEGDF1k9 with honeypot field 'company' and hidden 'formName'."
+  ],
+  "improvement_policy": {
+    "plan_then_implement": true,
+    "auto_apply_threshold": "Apply all LOW/MEDIUM-risk changes without asking; for HIGH-risk (visual identity change, breaking layout) include in the plan but DO NOT apply.",
+    "deliverables": ["applied code changes", "short changelog", "before/after summary", "live deployment URL"]
+  },
+  "proposal_requirements": {
+    "min_items": 10,
+    "buckets": {
+      "Structure": ["clean DOM, correct heading order, landmarks <header/main/footer>, remove dead code/unused CSS"],
+      "Design/UX": ["consistent spacing scale, readable line-lengths, buttons contrast, tap targets >=44px, focus states"],
+      "Performance": ["inline ~10KB critical CSS, preload hero, defer non-critical, lazy-load images, compress losslessly"],
+      "Accessibility": ["aria-labels where needed, semantic lists, keyboard nav, color contrast (WCAG AA)"],
+      "SEO/Metadata": ["title/description, canonical, OG/Twitter, JSON-LD LocalBusiness with Orhei"],
+      "i18n": ["verify data-i18n keys, fill missing strings, persist language (localStorage)"],
+      "Form UX": ["client-side validation hints, optimistic success for no-cors, error state, honeypot preserved"],
+      "Content": ["tighten RU/RO/EN copy for benefits/outcomes; keep MDL placeholders"],
+      "Optional": ["sitemap.xml & robots.txt, WhatsApp/Telegram deep links, favicon, 404.html"]
+    }
+  },
+  "tasks": [
+    "SCAN: Map files, detect unused CSS/JS, missing i18n keys; output a short improvement plan grouped by buckets.",
+    "IMPLEMENT: Auto-apply all LOW/MEDIUM-risk items from the plan. Keep hero visual unchanged.",
+    "A11Y/SEO/PERF: Enforce WCAG AA, add meta & OG/Twitter, JSON-LD LocalBusiness (city: Orhei), inline critical CSS, preload hero, lazy-load others.",
+    "CONTENT: Proofread RU/RO/EN; keep concise, benefit-driven microcopy; retain MDL price placeholders.",
+    "FORM: Keep submit-form.com endpoint; add friendly success/error states; keep honeypot field.",
+    "MESSENGERS: Add placeholder WhatsApp/Telegram deep links near the form (do not block validation).",
+    "QA: Test at 360/768/1024/1440 widths. Run a Lighthouse check and note scores (target ≥90 Perf/Best/SEO mobile).",
+    "DEPLOY: Configure and publish Replit Static Deployment from project root; output the live URL."
+  ],
+  "acceptance_criteria": [
+    "Hero image unchanged visually.",
+    "Language switcher works and persists.",
+    "Form posts to submit-form.com/CmEGDF1k9 with honeypot.",
+    "Applied improvement plan included in output (list of changes) and reflected in code.",
+    "Live Static Deployment URL provided."
+  ],
+  "runtime": {
+    "local_preview": ".replit runs `python3 -m http.server $PORT`",
+    "deploy": "Replit → Deploy → Static → Publish"
+  }
+}

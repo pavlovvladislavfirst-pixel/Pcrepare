@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional computer help and remote support services in Moldova and PMR. Expert PC troubleshooting, setup, and technical assistance.">
+    <meta name="keywords" content="computer help, remote support, PC repair, technical assistance, Moldova, PMR, Transnistria">
+    <link rel="canonical" href="https://neoconsult.tech">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neoconsult.tech">
+    <meta property="og:title" content="NeoConsult - Professional Computer Support in Moldova & PMR">
+    <meta property="og:description" content="Expert computer troubleshooting and remote support services. Fast, reliable technical assistance for all your PC needs.">
+    <meta property="og:image" content="https://neoconsult.tech/assets/hero.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://neoconsult.tech">
+    <meta property="twitter:title" content="NeoConsult - Professional Computer Support in Moldova & PMR">
+    <meta property="twitter:description" content="Expert computer troubleshooting and remote support services. Fast, reliable technical assistance for all your PC needs.">
+    <meta property="twitter:image" content="https://neoconsult.tech/assets/hero.jpg">
+    
+    <title>NeoConsult - Professional Computer Support in Moldova & PMR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="theme-color" content="#1e40af">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/addons/addons.css">
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "NeoConsult - Computer Support",
+        "description": "Professional computer help and remote support services",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Moldova",
+            "addressCountry": "MD"
+        },
+        "telephone": "+37361060756",
+        "serviceArea": [
+            {
+                "@type": "AdministrativeArea",
+                "name": "Moldova"
+            },
+            {
+                "@type": "AdministrativeArea", 
+                "name": "PMR"
+            }
+        ],
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "$"
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <div class="nav-content">
+                <div class="brand">
+                    <!-- Logo. To replace it, change 'src' to your image path. Keep max-height ~40px for alignment.
+                         Example: <img src="/assets/my-logo.png" alt="Your Logo" /> -->
+                    <img src="/logo_neoconsult.svg" alt="NeoConsult Logo" style="height: 32px; margin-right: 8px;">
+                    <span data-i18n="nav.brand">NeoConsult</span>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#services" data-i18n="nav.services">Services</a>
+                    <a href="#remote-support" data-i18n="nav.remote">Remote Support</a>
+                    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+                    <a href="#how-we-work" data-i18n="nav.how_we_work">How We Work</a>
+                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                    <select id="language-select-desktop" aria-label="Select language">
+                        <option value="ru" data-i18n="lang.ru">RU</option>
+                        <option value="en" data-i18n="lang.en">EN</option>
+                        <option value="ro" data-i18n="lang.ro">RO</option>
+                    </select>
+                </div>
+                
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu hidden" role="menu">
+                <a href="#services" role="menuitem" data-i18n="nav.services">Services</a>
+                <a href="#remote-support" role="menuitem" data-i18n="nav.remote">Remote Support</a>
+                <a href="#pricing" role="menuitem" data-i18n="nav.pricing">Pricing</a>
+                <a href="#how-we-work" role="menuitem" data-i18n="nav.how_we_work">How We Work</a>
+                <a href="#faq" role="menuitem" data-i18n="nav.faq">FAQ</a>
+                <a href="#contact" role="menuitem" data-i18n="nav.contact">Contact</a>
+                <select id="language-select" aria-label="Select language">
+                    <option value="en" data-i18n="lang.en">EN</option>
+                    <option value="ru" data-i18n="lang.ru">RU</option>
+                    <option value="ro" data-i18n="lang.ro">RO</option>
+                </select>
+            </div>
+        </nav>
+        
+        <!-- Hamburger (shown on <=1024px) -->
+        <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+        <!-- Mobile menu panel -->
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+          <nav>
+            <a href="#services" data-i18n="nav.services">Услуги</a>
+            <a href="#remote" data-i18n="nav.remote">Удалённая помощь</a>
+            <a href="#pricing" data-i18n="nav.pricing">Цены</a>
+            <a href="#how" data-i18n="nav.how_we_work">Как работаем</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            <a href="#contact" data-i18n="nav.contact">Контакты</a>
+          </nav>
+          <div class="lang-row">
+            <select id="language-select" class="lang-select" aria-label="Select language">
+              <option value="ru" data-i18n="lang.ru">RU</option>
+              <option value="ro" data-i18n="lang.ro">RO</option>
+              <option value="en" data-i18n="lang.en">EN</option>
+            </select>
+          </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <div class="container">
+                <h1 data-i18n="hero.title">
+                    NeoConsult - Professional Computer Support
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
+                    Expert technical assistance for all your PC needs. Fast, reliable, and professional support in Moldova and PMR.
+                </p>
+                <div class="hero-buttons">
+                    <a id="cta-help" class="btn btn-primary" href="#contact" data-i18n="hero.cta_primary">
+                        Get Help Now
+                    </a>
+                    <a id="cta-services" class="btn btn-outline" href="#services" data-i18n="hero.cta_secondary">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="services.title">Our Services</h2>
+                    <p data-i18n="services.subtitle">
+                        Comprehensive computer support solutions tailored to your needs
+                    </p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.troubleshooting.title">PC Troubleshooting</h3>
+                        <p data-i18n="services.troubleshooting.description">
+                            Diagnose and fix computer problems quickly and efficiently
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-download" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.software.title">Software Installation</h3>
+                        <p data-i18n="services.software.description">
+                            Professional software setup and configuration services
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.security.title">Security Setup</h3>
+                        <p data-i18n="services.security.description">
+                            Protect your system with comprehensive security solutions
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hdd" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.hardware.title">Hardware Setup</h3>
+                        <p data-i18n="services.hardware.description">
+                            Expert installation and configuration of computer hardware
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.training.title">Computer Training</h3>
+                        <p data-i18n="services.training.description">
+                            Learn essential computer skills with personalized training
+                        </p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud" aria-hidden="true"></i>
+                        </div>
+                        <h3 data-i18n="services.backup.title">Data Backup</h3>
+                        <p data-i18n="services.backup.description">
+                            Secure your important files with reliable backup solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Remote Support Section -->
+        <section id="remote-support" class="section section-muted">
+            <div class="container">
+                <div class="remote-grid">
+                    <div class="remote-content">
+                        <h2 data-i18n="remote.title">24/7 Remote Support</h2>
+                        <p data-i18n="remote.description">
+                            Get instant help from anywhere. Our remote support service allows us to diagnose and fix most computer issues without visiting your location.
+                        </p>
+                        
+                        <div class="remote-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <div>
+                                    <h4 data-i18n="remote.features.instant.title">Instant Connection</h4>
+                                    <p data-i18n="remote.features.instant.description">Connect within minutes for immediate assistance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <div>
+                                    <h4 data-i18n="remote.features.secure.title">Secure Access</h4>
+                                    <p data-i18n="remote.features.secure.description">Enterprise-grade security for safe remote sessions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <div>
+                                    <h4 data-i18n="remote.features.expert.title">Expert Technicians</h4>
+                                    <p data-i18n="remote.features.expert.description">Certified professionals with years of experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-primary" data-i18n="remote.cta">
+                            Start Remote Session
+                        </a>
+                    </div>
+                    
+                    <div class="remote-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Remote computer support illustration" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="pricing.title">Transparent Pricing</h2>
+                    <p data-i18n="pricing.subtitle">
+                        No hidden fees. Fair pricing for quality service.
+                    </p>
+                </div>
+                
+                <div class="pricing-grid">
+                    <!-- Basic Plan -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 data-i18n="pricing.basic.title">Basic Support</h3>
+                            <div class="price">
+                                <span data-i18n="pricing.basic.price">150 MDL</span>
+                                <span class="period">/hour</span>
+                            </div>
+                            <p data-i18n="pricing.basic.description">Perfect for simple troubleshooting</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.basic.features.troubleshooting">Basic troubleshooting</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.basic.features.software">Software installation</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.basic.features.support">Phone support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-outline" data-i18n="pricing.basic.cta">
+                            Choose Basic
+                        </a>
+                    </div>
+                    
+                    <!-- Professional Plan -->
+                    <div class="pricing-card pricing-featured">
+                        <div class="pricing-badge" data-i18n="pricing.professional.badge">Most Popular</div>
+                        
+                        <div class="pricing-header">
+                            <h3 data-i18n="pricing.professional.title">Professional</h3>
+                            <div class="price">
+                                <span data-i18n="pricing.professional.price">250 MDL</span>
+                                <span class="period">/hour</span>
+                            </div>
+                            <p data-i18n="pricing.professional.description">Comprehensive computer services</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.professional.features.all_basic">Everything in Basic</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.professional.features.remote">Remote support</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.professional.features.hardware">Hardware setup</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.professional.features.security">Security configuration</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-primary" data-i18n="pricing.professional.cta">
+                            Choose Professional
+                        </a>
+                    </div>
+                    
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 data-i18n="pricing.enterprise.title">Enterprise</h3>
+                            <div class="price">
+                                <span data-i18n="pricing.enterprise.price">Custom</span>
+                            </div>
+                            <p data-i18n="pricing.enterprise.description">For businesses and organizations</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.enterprise.features.unlimited">Unlimited support</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.enterprise.features.priority">Priority response</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.enterprise.features.training">Staff training</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                <span data-i18n="pricing.enterprise.features.maintenance">Proactive maintenance</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn btn-outline" data-i18n="pricing.enterprise.cta">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section id="how-we-work" class="section section-muted">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="how_we_work.title">How We Work</h2>
+                    <p data-i18n="how_we_work.subtitle">
+                        Simple, efficient process to get your computer working perfectly
+                    </p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3 data-i18n="how_we_work.step1.title">Contact Us</h3>
+                        <p data-i18n="how_we_work.step1.description">
+                            Reach out via phone, email, or our contact form
+                        </p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3 data-i18n="how_we_work.step2.title">Diagnose</h3>
+                        <p data-i18n="how_we_work.step2.description">
+                            We assess your computer issue and provide a solution plan
+                        </p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3 data-i18n="how_we_work.step3.title">Fix</h3>
+                        <p data-i18n="how_we_work.step3.description">
+                            Expert technicians resolve your issue efficiently
+                        </p>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number step-final">4</div>
+                        <h3 data-i18n="how_we_work.step4.title">Follow Up</h3>
+                        <p data-i18n="how_we_work.step4.description">
+                            We ensure everything works perfectly and provide tips
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
+                    <p data-i18n="faq.subtitle">
+                        Find answers to common questions about our services
+                    </p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq-toggle="faq1" aria-expanded="false" aria-controls="faq1-content">
+                            <span data-i18n="faq.q1.question">How quickly can you help me?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq1-content" class="faq-answer hidden">
+                            <p data-i18n="faq.q1.answer">
+                                We typically respond within 30 minutes during business hours. For urgent issues, we offer emergency support with faster response times.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq-toggle="faq2" aria-expanded="false" aria-controls="faq2-content">
+                            <span data-i18n="faq.q2.question">Is remote support safe?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq2-content" class="faq-answer hidden">
+                            <p data-i18n="faq.q2.answer">
+                                Yes, absolutely. We use enterprise-grade encryption and secure connection protocols. You maintain full control and can end the session at any time.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq-toggle="faq3" aria-expanded="false" aria-controls="faq3-content">
+                            <span data-i18n="faq.q3.question">Do you offer on-site visits?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq3-content" class="faq-answer hidden">
+                            <p data-i18n="faq.q3.answer">
+                                Yes, we provide on-site service throughout Moldova for hardware installation, complex setup, and issues that cannot be resolved remotely.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq-toggle="faq4" aria-expanded="false" aria-controls="faq4-content">
+                            <span data-i18n="faq.q4.question">What payment methods do you accept?</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                        <div id="faq4-content" class="faq-answer hidden">
+                            <p data-i18n="faq.q4.answer">
+                                We accept cash, bank transfers, and major credit cards. Payment is due after service completion and your satisfaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 data-i18n="contact.title">Get In Touch</h2>
+                    <p data-i18n="contact.subtitle">
+                        Ready to solve your computer problems? Contact us today for professional assistance.
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-section">
+                            <h3 data-i18n="contact.info.title">Contact Information</h3>
+                            
+                            <div class="contact-items">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    <div>
+                                        <p class="contact-label" data-i18n="contact.info.phone.label">Phone</p>
+                                        <p class="contact-value">+373 610 60 756</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                                    <div>
+                                        <p class="contact-label" data-i18n="contact.info.email.label">Email</p>
+                                        <p class="contact-value">neoconsult.tech@gmail.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                    <div>
+                                        <p class="contact-label" data-i18n="contact.info.location.label">Location</p>
+                                        <p class="contact-value" data-i18n="contact.info.location.value">Orhei, Moldova</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                    <div>
+                                        <p class="contact-label" data-i18n="contact.info.hours.label">Business Hours</p>
+                                        <p class="contact-value" data-i18n="contact.info.hours.value">Mon-Fri: 9:00 - 18:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Messenger Links -->
+                        <div class="contact-section">
+                            <h4 data-i18n="contact.messengers.title">Instant Messaging</h4>
+                            <div class="messenger-links">
+                                <a href="https://wa.me/37361060756" target="_blank" rel="noopener noreferrer" class="messenger-link" aria-label="Contact via WhatsApp">
+                                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener noreferrer" class="messenger-link" aria-label="Contact via Telegram">
+                                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                                    <span>Telegram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h3 data-i18n="contact.form.title">Send Message</h3>
+                        
+                        <form id="contact-form" action="https://submit-form.com/CmEGDF1k9" method="POST" novalidate>
+                            <!-- Honeypot field for spam protection -->
+                            <input type="hidden" name="company" class="sr-only" tabindex="-1" autocomplete="off">
+                            <input type="hidden" name="formName" value="computer-help-contact">
+                            
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.form.name.label">Full Name *</label>
+                                <input type="text" id="name" name="name" required 
+                                       data-i18n-placeholder="contact.form.name.placeholder" placeholder="Your full name">
+                                <div class="error-message hidden"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.form.email.label">Email Address *</label>
+                                <input type="email" id="email" name="email" required
+                                       data-i18n-placeholder="contact.form.email.placeholder" placeholder="your@email.com">
+                                <div class="error-message hidden"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" data-i18n="contact.form.phone.label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                       data-i18n-placeholder="contact.form.phone.placeholder" placeholder="+373 610 60 756">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" data-i18n="contact.form.subject.label">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected data-i18n="contact.form.subject.default">Select a service</option>
+                                    <option value="troubleshooting" data-i18n="contact.form.subject.troubleshooting">PC Troubleshooting</option>
+                                    <option value="remote-support" data-i18n="contact.form.subject.remote">Remote Support</option>
+                                    <option value="software-installation" data-i18n="contact.form.subject.software">Software Installation</option>
+                                    <option value="hardware-setup" data-i18n="contact.form.subject.hardware">Hardware Setup</option>
+                                    <option value="training" data-i18n="contact.form.subject.training">Computer Training</option>
+                                    <option value="other" data-i18n="contact.form.subject.other">Other</option>
+                                </select>
+                                <div class="error-message hidden"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.form.message.label">Message *</label>
+                                <textarea id="message" name="message" rows="4" required
+                                          data-i18n-placeholder="contact.form.message.placeholder" placeholder="Describe your computer issue or service needed..."></textarea>
+                                <div class="error-message hidden"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.form.submit">
+                                Send Message
+                            </button>
+                            
+                            <!-- Form Status Messages -->
+                            <div id="form-success" class="form-message form-success-msg hidden">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span data-i18n="contact.form.success">Message sent successfully! We'll get back to you soon.</span>
+                            </div>
+                            
+                            <div id="form-error" class="form-message form-error-msg hidden">
+                                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                                <span data-i18n="contact.form.error">Sorry, there was an error sending your message. Please try again.</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <i class="fas fa-desktop" aria-hidden="true"></i>
+                        <span data-i18n="nav.brand">NeoConsult</span>
+                    </div>
+                    <p data-i18n="footer.description">
+                        Professional computer support and technical assistance in Moldova.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.services.title">Services</h4>
+                    <ul>
+                        <li><a href="#services" data-i18n="footer.services.troubleshooting">PC Troubleshooting</a></li>
+                        <li><a href="#services" data-i18n="footer.services.remote">Remote Support</a></li>
+                        <li><a href="#services" data-i18n="footer.services.software">Software Installation</a></li>
+                        <li><a href="#services" data-i18n="footer.services.hardware">Hardware Setup</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.company.title">Company</h4>
+                    <ul>
+                        <li><a href="#how-we-work" data-i18n="footer.company.how_we_work">How We Work</a></li>
+                        <li><a href="#pricing" data-i18n="footer.company.pricing">Pricing</a></li>
+                        <li><a href="#faq" data-i18n="footer.company.faq">FAQ</a></li>
+                        <li><a href="#contact" data-i18n="footer.company.contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-i18n="footer.connect.title">Connect</h4>
+                    <ul>
+                        <li>
+                            <a href="tel:+37361060756">
+                                <i class="fas fa-phone" aria-hidden="true"></i>+373 610 60 756
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:neoconsult.tech@gmail.com">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/37361060756" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i>WhatsApp
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-telegram" aria-hidden="true"></i>Telegram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 NeoConsult.tech. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Speed-dial FAB -->
+    <div class="speed-dial" id="speedDial">
+        <button class="fab main" aria-label="More" id="fabMain">+</button>
+        <div class="fab-list">
+            <a class="fab fab-call" href="tel:+37361060756" aria-label="Call"></a>
+            <a class="fab fab-wa" href="https://wa.me/37361060756" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+            <a class="fab fab-tg" href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener" aria-label="Telegram"></a>
+        </div>
+    </div>
+
+    <!-- Callback popup -->
+    <div class="callback-modal" id="callbackModal" aria-hidden="true">
+      <div class="callback-header">
+        <h3 data-i18n="popup.title">Бесплатная диагностика в течение 24 часов</h3>
+        <button type="button" class="close" aria-label="Close" id="cbClose">×</button>
+      </div>
+      <div class="callback-body">
+        <input id="cbPhone" inputmode="tel" data-i18n-placeholder="popup.phone_placeholder" placeholder="+373..." />
+        <button class="cta" id="cbSend" data-i18n="popup.cta">Заказать звонок</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="/addons/addons.js" defer></script>
+    
+    <!-- Self-check loader: only enabled via ?selfcheck=1 -->
+    <script>
+      (function () {
+        if (location.search.includes('selfcheck=1')) {
+          var s = document.createElement('script');
+          s.src = 'dev/selfcheck.js';
+          s.defer = true;
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
+    
+    <!-- QA harness loader: only enabled via ?qa=1 -->
+    <script>
+      (function () {
+        if (location.search.includes('qa=1') && !document.getElementById('qa-loader')) {
+          var s = document.createElement('script');
+          s.id = 'qa-loader';
+          s.src = 'dev/qa-check.js';
+          s.defer = true;
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
+</body>
+</html>

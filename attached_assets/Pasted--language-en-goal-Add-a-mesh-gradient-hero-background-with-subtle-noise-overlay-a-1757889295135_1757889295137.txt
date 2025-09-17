@@ -1,0 +1,25 @@
+{
+  "language": "en",
+  "goal": "Add a mesh-gradient hero background (with subtle noise overlay) and a small Back-to-Top button. Keep it client-side only with a single CSS+JS append and minimal HTML includes.",
+  "changes": [
+    {
+      "path": "addons/addons.css",
+      "append": "\n/* === HERO: mesh gradient + subtle noise === */\n.nc-hero-mesh{position:relative;color:#fff;background:\n  radial-gradient(600px 320px at 10% 20%, #3b60ff 0%, transparent 60%),\n  radial-gradient(520px 300px at 85% 25%, #1e90ff 0%, transparent 60%),\n  linear-gradient(135deg, #1e40af, #2748c7 60%, #1e40af);\n}\n.nc-hero-mesh::after{content:\"\";position:absolute;inset:0;pointer-events:none;opacity:.08;mix-blend-mode:overlay;\n  background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAMAASsJTYQAAAAASUVORK5CYII=\");}\n/* немного повышаем читаемость заголовков и сабтайтлов */\n.nc-hero-contrast h1,.nc-hero-contrast .hero-title{font-size:clamp(24px,5vw+8px,56px);line-height:1.15;text-shadow:0 2px 6px rgba(0,0,0,.25)}\n.nc-hero-contrast p,.nc-hero-contrast .subtitle{font-size:clamp(16px,2.8vw+6px,22px);line-height:1.4;text-shadow:0 1px 3px rgba(0,0,0,.2)}\n\n/* === Small Back-to-Top button === */\n.nc-totop{position:fixed;right:14px;bottom:14px;width:42px;height:42px;border-radius:9999px;background:#0b57d0;color:#fff;border:0;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:10000;cursor:pointer}\n.nc-totop.show{opacity:1;visibility:visible;transform:translateY(0)}\n.nc-totop:focus-visible{outline:2px solid #fff;outline-offset:2px;box-shadow:0 0 0 3px rgba(11,87,208,.35),0 10px 20px rgba(0,0,0,.25)}\n@media(max-width:640px){.nc-totop{right:12px;bottom:12px;width:40px;height:40px}}\n"
+    },
+    {
+      "path": "addons/addons.js",
+      "append": "\n/* === HERO mesh init + Back-to-Top === */\n(function(){\n  function initHeroMesh(){\n    // Находим первый подходящий hero и навешиваем классы\n    const hero = document.querySelector('.hero, .section-hero, section.hero, header.hero');\n    if(!hero) return;\n    hero.classList.add('nc-hero-mesh','nc-hero-contrast');\n  }\n  function initToTop(){\n    if(document.querySelector('.nc-totop')) return;\n    const btn=document.createElement('button');\n    btn.type='button';\n    btn.className='nc-totop';\n    btn.setAttribute('aria-label','Наверх');\n    btn.title='Наверх';\n    btn.innerHTML=\"<svg width='18' height='18' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M12 8l-6 6m6-6l6 6' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>\";\n    document.body.appendChild(btn);\n    const prefersReduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;\n    const toTop=()=>{ prefersReduced ? window.scrollTo(0,0) : window.scrollTo({top:0, behavior:'smooth'}); };\n    btn.addEventListener('click', toTop);\n    btn.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); toTop(); }});\n    const onScroll=()=>{ const y=window.pageYOffset||document.documentElement.scrollTop; btn.classList.toggle('show', y>400); };\n    window.addEventListener('scroll', onScroll, {passive:true});\n    onScroll();\n  }\n  document.addEventListener('DOMContentLoaded', function(){ try{ initHeroMesh(); initToTop(); }catch(e){ console.warn('addons hero/totop error', e); } });\n})();\n"
+    },
+    {
+      "path": "index.html",
+      "insert_before": "</head>",
+      "content": "\n<link rel=\"stylesheet\" href=\"/addons/addons.css\">\n"
+    },
+    {
+      "path": "index.html",
+      "insert_before": "</body>",
+      "content": "\n<script src=\"/addons/addons.js\" defer></script>\n"
+    }
+  ],
+  "notes": "Hero получает стильный mesh-градиент с лёгким шумом поверх для глубины и лучшей читаемости текста (без картинок). Кнопка “вверх” появляется после ~400px прокрутки, учитывает prefers-reduced-motion, доступна с клавиатуры. Все правки — через append в addons.css/js; если они ещё не подключены, инклюды добавятся в index.html."
+}

@@ -64,7 +64,7 @@
 <body>
 
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">
+    <a href="#main-content" class="skip-link" data-i18n="skip.link">
         Skip to main content
     </a>
 
@@ -78,7 +78,7 @@
                     <img src="/logo_neoconsult.svg" alt="NeoConsult Logo" style="height: 32px; margin-right: 8px;">
                     <span data-i18n="nav.brand">NeoConsult</span>
                 </div>
-                
+
                 <div class="nav-links">
                     <a href="#services" data-i18n="nav.services">Services</a>
                     <a href="#remote-support" data-i18n="nav.remote">Remote Support</a>
@@ -86,54 +86,33 @@
                     <a href="#how-we-work" data-i18n="nav.how_we_work">How We Work</a>
                     <a href="#faq" data-i18n="nav.faq">FAQ</a>
                     <a href="#contact" data-i18n="nav.contact">Contact</a>
-                    <select id="language-select-desktop" aria-label="Select language">
+                    <select id="language-select-desktop" class="language-select" data-lang-switch aria-label="Select language" data-i18n-aria="nav.language_select">
                         <option value="ru" data-i18n="lang.ru">RU</option>
                         <option value="en" data-i18n="lang.en">EN</option>
                         <option value="ro" data-i18n="lang.ro">RO</option>
                     </select>
                 </div>
-                
-                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-i18n-aria="nav.menu_toggle">
                     <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
             </div>
-            
+
             <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="mobile-menu hidden" role="menu">
+            <div id="mobile-menu" class="mobile-menu hidden" role="menu" aria-label="Mobile navigation" data-i18n-aria="nav.mobile_menu" aria-hidden="true">
                 <a href="#services" role="menuitem" data-i18n="nav.services">Services</a>
                 <a href="#remote-support" role="menuitem" data-i18n="nav.remote">Remote Support</a>
                 <a href="#pricing" role="menuitem" data-i18n="nav.pricing">Pricing</a>
                 <a href="#how-we-work" role="menuitem" data-i18n="nav.how_we_work">How We Work</a>
                 <a href="#faq" role="menuitem" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" role="menuitem" data-i18n="nav.contact">Contact</a>
-                <select id="language-select" aria-label="Select language">
-                    <option value="en" data-i18n="lang.en">EN</option>
+                <select id="language-select-mobile" class="language-select" data-lang-switch aria-label="Select language" data-i18n-aria="nav.language_select">
                     <option value="ru" data-i18n="lang.ru">RU</option>
+                    <option value="en" data-i18n="lang.en">EN</option>
                     <option value="ro" data-i18n="lang.ro">RO</option>
                 </select>
             </div>
         </nav>
-        
-        <!-- Hamburger (shown on <=1024px) -->
-        <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
-        <!-- Mobile menu panel -->
-        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-          <nav>
-            <a href="#services" data-i18n="nav.services">Услуги</a>
-            <a href="#remote" data-i18n="nav.remote">Удалённая помощь</a>
-            <a href="#pricing" data-i18n="nav.pricing">Цены</a>
-            <a href="#how" data-i18n="nav.how_we_work">Как работаем</a>
-            <a href="#faq" data-i18n="nav.faq">FAQ</a>
-            <a href="#contact" data-i18n="nav.contact">Контакты</a>
-          </nav>
-          <div class="lang-row">
-            <select id="language-select" class="lang-select" aria-label="Select language">
-              <option value="ru" data-i18n="lang.ru">RU</option>
-              <option value="ro" data-i18n="lang.ro">RO</option>
-              <option value="en" data-i18n="lang.en">EN</option>
-            </select>
-          </div>
-        </div>
     </header>
 
     <!-- Main Content -->
@@ -541,7 +520,7 @@
                                     <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                     <div>
                                         <p class="contact-label" data-i18n="contact.info.location.label">Location</p>
-                                        <p class="contact-value" data-i18n="contact.info.location.value">Orhei, Moldova</p>
+                                        <p class="contact-value" data-i18n="contact.info.location.value">Serving Moldova and Transnistria</p>
                                     </div>
                                 </div>
                                 
@@ -559,13 +538,13 @@
                         <div class="contact-section">
                             <h4 data-i18n="contact.messengers.title">Instant Messaging</h4>
                             <div class="messenger-links">
-                                <a href="https://wa.me/37361060756" target="_blank" rel="noopener noreferrer" class="messenger-link" aria-label="Contact via WhatsApp">
+                                <a href="https://wa.me/37361060756" target="_blank" rel="noopener noreferrer" class="messenger-link" data-i18n-aria="contact.messengers.whatsapp_aria" aria-label="Contact via WhatsApp">
                                     <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                                    <span>WhatsApp</span>
+                                    <span data-i18n="contact.messengers.whatsapp">WhatsApp</span>
                                 </a>
-                                <a href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener noreferrer" class="messenger-link" aria-label="Contact via Telegram">
+                                <a href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener noreferrer" class="messenger-link" data-i18n-aria="contact.messengers.telegram_aria" aria-label="Contact via Telegram">
                                     <i class="fab fa-telegram" aria-hidden="true"></i>
-                                    <span>Telegram</span>
+                                    <span data-i18n="contact.messengers.telegram">Telegram</span>
                                 </a>
                             </div>
                         </div>
@@ -708,28 +687,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Speed-dial FAB -->
-    <div class="speed-dial" id="speedDial">
-        <button class="fab main" aria-label="More" id="fabMain">+</button>
-        <div class="fab-list">
-            <a class="fab fab-call" href="tel:+37361060756" aria-label="Call"></a>
-            <a class="fab fab-wa" href="https://wa.me/37361060756" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
-            <a class="fab fab-tg" href="https://t.me/+Y2Su81TKqYxlMTA6" target="_blank" rel="noopener" aria-label="Telegram"></a>
-        </div>
-    </div>
-
-    <!-- Callback popup -->
-    <div class="callback-modal" id="callbackModal" aria-hidden="true">
-      <div class="callback-header">
-        <h3 data-i18n="popup.title">Бесплатная диагностика в течение 24 часов</h3>
-        <button type="button" class="close" aria-label="Close" id="cbClose">×</button>
-      </div>
-      <div class="callback-body">
-        <input id="cbPhone" inputmode="tel" data-i18n-placeholder="popup.phone_placeholder" placeholder="+373..." />
-        <button class="cta" id="cbSend" data-i18n="popup.cta">Заказать звонок</button>
-      </div>
-    </div>
 
     <script src="main.js"></script>
     <script src="/addons/addons.js" defer></script>

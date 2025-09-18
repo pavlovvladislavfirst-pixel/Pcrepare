@@ -139,6 +139,7 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .nav-content {
@@ -169,8 +170,9 @@ p {
     color: #2043a7;
 }
 
+.language-select,
 #language-select-desktop,
-#language-select {
+#language-select-mobile {
     height: 36px;
     padding: 4px 8px;
     border: 1px solid #d6d6d6;
@@ -222,6 +224,9 @@ p {
     box-shadow: 0 16px 40px rgba(0,0,0,.15);
     padding: 12px;
     z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .mobile-menu.hidden {
@@ -267,9 +272,16 @@ p {
     display: flex; align-items: center; gap: 28px;
 }
 .nav-links a { display: inline-flex; align-items:center; padding: 8px 0; }
-.lang-select, #language-select-desktop {
-    height: 36px; padding: 4px 8px; border: 1px solid #d6d6d6; border-radius: 8px;
-    font: inherit; background: #fff;
+.lang-select,
+.language-select,
+#language-select-desktop,
+#language-select-mobile {
+    height: 36px;
+    padding: 4px 8px;
+    border: 1px solid #d6d6d6;
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
 }
 @media (max-width: 768px){
     .nav-bar { padding: 10px 12px; gap: 12px; }
@@ -404,22 +416,6 @@ select:focus, input:focus, textarea:focus {
     z-index: -1;
 }
 
-/* Speed-dial FAB component */
-.speed-dial{ position: fixed; right: 18px; bottom: 18px; z-index: 1100; pointer-events:none; }
-.fab{ width:56px; height:56px; border-radius:50%; border:none; box-shadow:0 8px 22px rgba(0,0,0,.25);
-      display:flex; align-items:center; justify-content:center; font-size:22px; color:#fff; background:#2043a7;
-      text-decoration: none; cursor: pointer; }
-.fab.main{ background:#2043a7; }
-.fab-list{ display:flex; flex-direction:column; gap:12px; align-items:flex-end; margin-bottom:12px; transform: translateY(10px); opacity:0; pointer-events:none; transition:.2s; }
-.speed-dial.open .fab-list{ transform: translateY(0); opacity:1; pointer-events:auto; }
-.fab, .speed-dial .fab { pointer-events:auto; }
-
-/* Official icons as background */
-.fab-wa { background:#25D366 url('./assets/icons/whatsapp.svg') center/62% no-repeat; }
-.fab-tg { background:#229ED9 url('./assets/icons/telegram.svg') center/62% no-repeat; }
-.fab-call { background:#2043a7 url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22white%22 d=%22M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.2 2.2z%22/></svg>') center/62% no-repeat; }
-.fab-list .fab:hover{ filter: brightness(1.05); }
-
 /* Legacy header classes for compatibility */
 .header {
     background-color: var(--card);
@@ -428,93 +424,6 @@ select:focus, input:focus, textarea:focus {
     position: sticky;
     top: 0;
     z-index: 40;
-}
-
-.nav-container {
-    padding: 1rem 0;
-}
-
-.nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.brand i {
-    margin-right: 0.5rem;
-}
-
-.nav-links {
-    display: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-    padding: 0.5rem;
-    border-radius: var(--radius);
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    color: var(--primary);
-    outline: none;
-}
-
-.nav-links a:focus {
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
-}
-
-.mobile-menu-toggle {
-    display: block;
-    background: none;
-    border: none;
-    color: var(--secondary);
-    font-size: 1.25rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    border-radius: var(--radius);
-}
-
-.mobile-menu-toggle:hover,
-.mobile-menu-toggle:focus {
-    color: var(--primary);
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
-}
-
-.mobile-menu {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.mobile-menu a {
-    color: var(--secondary);
-    text-decoration: none;
-    padding: 0.75rem;
-    border-radius: var(--radius);
-    transition: color 0.2s;
-}
-
-.mobile-menu a:hover,
-.mobile-menu a:focus {
-    color: var(--primary);
-    background-color: var(--muted);
-    outline: none;
 }
 
 .hidden {
@@ -1293,21 +1202,6 @@ select:focus, input:focus, textarea:focus {
     .brand-text, .site-title, .brand span, .header-title { display: none !important; }
 }
 
-/* === Header & Nav === */
-.site-header{position:sticky;top:0;z-index:1000;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 20px}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-links a{display:inline-flex;align-items:center;padding:8px 0}
-.lang-select,#language-select-desktop{height:36px;padding:4px 8px;border:1px solid #d6d6d6;border-radius:8px;font:inherit;background:#fff}
-@media(max-width:1024px){.nav-links{display:none}.hamburger{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border-radius:8px;border:1px solid #d6d6d6;background:#fff}}
-@media(min-width:1025px){.hamburger,.mobile-menu{display:none!important}}
-.mobile-menu{position:absolute;top:100%;right:12px;width:min(92vw,360px);background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.15);padding:12px;display:none}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;padding:10px 8px;border-radius:8px;color:#0f172a}
-.mobile-menu a:hover{background:#f3f4f6}
-.mobile-menu .lang-row{margin-top:8px;display:flex;gap:8px;align-items:center;justify-content:flex-end}
-.mobile-menu select{height:36px;padding:4px 8px;border:1px solid #d6d6d6;border-radius:8px;font:inherit}
-
 /* === Hero fallback (no hero.jpg) === */
 .hero{background:radial-gradient(1200px 600px at 80% 10%,rgba(255,255,255,.05),transparent 60%),linear-gradient(180deg,#2346a2 0%,#1b3a8a 100%);background-blend-mode:overlay,normal}
 
@@ -1323,18 +1217,6 @@ select option{color:#0f172a;background:#fff}
 .callback-body input{flex:1;min-width:0;border:1px solid #d6d6d6;border-radius:10px;padding:14px 16px}
 .callback-body .cta{white-space:nowrap;border-radius:12px;padding:14px 18px;background:#16a34a;color:#fff;border:none}
 @media(max-width:520px){.callback-body{flex-direction:column}.callback-body .cta{width:100%}}
-
-/* === Speed-Dial === */
-.speed-dial{position:fixed;right:18px;bottom:18px;z-index:1100;pointer-events:none}
-.fab{width:56px;height:56px;border-radius:50%;border:none;box-shadow:0 8px 22px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;background:#2043a7}
-.fab.main{background:#2043a7}
-.fab-list{display:flex;flex-direction:column;gap:12px;align-items:flex-end;margin-bottom:12px;transform:translateY(10px);opacity:0;pointer-events:none;transition:.2s}
-.speed-dial.open .fab-list{transform:translateY(0);opacity:1;pointer-events:auto}
-.fab,.speed-dial .fab{pointer-events:auto}
-/* Brand icons */
-.fab-wa{background:#25D366 url('./assets/icons/whatsapp.svg') center/62% no-repeat}
-.fab-tg{background:#229ED9 url('./assets/icons/telegram.svg') center/62% no-repeat}
-.fab-call{background:#2043a7 url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><path fill=%22white%22 d=%22M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.01l-2.2 2.2z%22/></svg>') center/62% no-repeat}
 
 /* make sure hero buttons are never blocked */
 .hero{position:relative}
